@@ -1,8 +1,11 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+
 const HeaderBar = () => {
   return (
-    <div>
-      <span>BugBegone</span>
-      <button>Hamburger</button>
+    <div className='nav__header'>
+      <span className='nav__title'>BugBegone</span>
+      <FontAwesomeIcon icon={faCoffee}/>
     </div>
   );
 }

@@ -2,11 +2,10 @@ import ListItem from './nav_item';
 
 const NavList = () => {
   return (
-    <ul>
-      <ListItem/>
-      <ListItem/>
-      <ListItem/>
-      <ListItem/>
+    <ul className='nav-list'>
+      <ListItem name='Home'/>
+      <ListItem name='My Tasks'/>
+      <ListItem name='Recent'/>
     </ul>
   )
 };

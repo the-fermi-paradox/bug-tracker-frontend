@@ -4,7 +4,7 @@ import NavList from './nav_list';
 
 const NavPanel = () => {
   return (
-    <nav>
+    <nav className='nav-panel'>
       <HeaderBar/>
       <UserBar/> 
       <NavList/>
