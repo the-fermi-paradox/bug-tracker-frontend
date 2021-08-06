@@ -5,8 +5,8 @@ const UserBar = () => {
     <div className='user-bar'>
       <img height='50' width='50' alt='empty' src={userIcon} className='user-icon'></img>
       <div className='user-bar__block'>
-        <span>User Name</span>
-        <span>Edit Profile</span>
+        <span className='user-bar__name'>Joseph Smithers</span>
+        <span className='user-bar__subname'>@josephsmithers</span>
       </div>
     </div>
   )
