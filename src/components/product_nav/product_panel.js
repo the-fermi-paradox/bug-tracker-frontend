@@ -1,20 +1,21 @@
 import url from "../../../config.js";
-import { useState, useEffect } from "React";
+import { useState, useEffect } from "react";
+import useFetch from "../../hooks/useFetch.js";
 import SearchBar from "./search_bar.js";
 import Header from "./header.js";
 
 const ProductPanel = () => {
-  const [products, setProducts] = useState();
-  useEffect(() => {
-    fetch(`${url}/products/`)
-      .then((payload) => payload.json())
-      .catch((err) => console.error(err));
-  }, []);
-
+  const { data } = useFetch(`${url}/products`);
   return (
     <div>
-      <SearchBar />
-      <Header />
+      {data ? (
+        <div className="product-wrapper">
+          <SearchBar />
+          <Header />
+        </div>
+      ) : (
+        <div>Loading...</div>
+      )}
     </div>
   );
 };
