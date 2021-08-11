@@ -15,7 +15,7 @@ const ProductPanel = () => {
         <div className="product-wrapper">
           <SearchBar />
           <Header />
-          <ProductList />
+          <ProductList data={data}/>
         </div>
       ) : (
         <div>Loading...</div>
