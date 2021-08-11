@@ -1,4 +1,5 @@
 const ProductItem = ({ data }) => {
+  console.log(data);
   const { title, open_count, closed_count } = data;
   return (
     <div className="product">
