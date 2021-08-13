@@ -14,8 +14,10 @@ const ProductPanel = () => {
       {data ? (
         <div className="product-wrapper">
           <SearchBar />
-          <Header />
-          <ProductList data={data} />
+          <div className="product-list-wrapper">
+            <Header />
+            <ProductList data={data} />
+          </div>
         </div>
       ) : (
         <div>Loading...</div>
