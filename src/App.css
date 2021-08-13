@@ -8,6 +8,36 @@
   --text2: #fffffd;
 }
 
+.App {
+  display: flex;
+}
+
+.product-panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.product__header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.square-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+}
+
+.square--open {
+  color: green;
+}
+
+.square--closed {
+  color: red;
+}
+
 .nav__header {
   background-color: var(--background2);
   height: 90px;

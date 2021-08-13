@@ -10,12 +10,12 @@ const ProductPanel = () => {
   // get products and count the number of tickets
   // with that id and open/closed status
   return (
-    <div>
+    <div className="product-panel">
       {data ? (
         <div className="product-wrapper">
           <SearchBar />
           <Header />
-          <ProductList data={data}/>
+          <ProductList data={data} />
         </div>
       ) : (
         <div>Loading...</div>
