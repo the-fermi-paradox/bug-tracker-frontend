@@ -1,5 +1,4 @@
 import url from "../../config.js";
-import { useState, useEffect } from "react";
 import useFetch from "../../hooks/useFetch.js";
 import SearchBar from "./search_bar.js";
 import Header from "./header.js";
