@@ -14,6 +14,11 @@
   display: flex;
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
 .product-panel {
   background-color: var(--background3);
   display: flex;
