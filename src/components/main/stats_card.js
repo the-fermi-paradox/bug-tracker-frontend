@@ -15,10 +15,10 @@ const _makePresentable = (text) => {
   }
 };
 
-const StatsCard = ({ key, value }) => {
-  const subtitle = _makePresentable(key);
+const StatsCard = ({ name, value }) => {
+  const subtitle = _makePresentable(name);
   return (
-    <div className="stats-card">
+    <div className={`stats-card ${name}`}>
       <h3>{value}</h3>
       <span>{subtitle}</span>
     </div>

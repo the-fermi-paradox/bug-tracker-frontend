@@ -1,3 +1,8 @@
+h1, h2, h3 {
+  padding: 0;
+  margin: 0;
+}
+
 :root, body, #root, .App {
   height: 100%;
   width: 100%;
@@ -17,6 +22,42 @@
 .main {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px 15px 20px;
+  border-bottom: 1px solid black;
+}
+
+.stats-panel {
+  padding: 20px;
+  border-bottom: 1px solid black;
+}
+
+.stats-blocks {
+  display: flex;
+}
+
+.stats-card {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: grey;
+  padding: 25px 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.open_count {
+  background-color: #b3dec2;
+}
+
+.closed_count {
+  background-color: #dcf8ef;
 }
 
 .product-panel {
@@ -98,7 +139,7 @@
 
 .nav__header {
   background-color: var(--background2);
-  height: 90px;
+  padding: 5px 5px 16px 5px;
   display: flex;
   align-items: center;
   justify-content: space-around;

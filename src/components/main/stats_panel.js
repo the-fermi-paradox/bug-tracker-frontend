@@ -9,7 +9,7 @@ const StatsPanel = () => {
       {data ? (
         <div className="stats-blocks">
           {Object.entries(data[0]).map(([key, value]) => (
-            <StatsCard key={key} value={value} />
+            <StatsCard name={key} value={value} />
           ))}
         </div>
       ) : (
