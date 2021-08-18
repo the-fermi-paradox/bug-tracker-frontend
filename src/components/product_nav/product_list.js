@@ -1,12 +1,16 @@
 import ProductItem from "./product_item.js";
 
-const ProductList = ({ data }) => {
+const ProductList = ({ data, callback }) => {
   return (
-    <div>
+    <ul className="product-list">
       {data.map((item) => (
-        <ProductItem data={item} />
+        <ProductItem
+          data={item}
+          key={`productPanel${item.id}`}
+          callback={callback}
+        />
       ))}
-    </div>
+    </ul>
   );
 };
 

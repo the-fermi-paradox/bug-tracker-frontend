@@ -3,16 +3,21 @@ import ProductBlock from "./product_block.js";
 import useFetch from "../../hooks/useFetch.js";
 import url from "../../config.js";
 
-const BugSection = () => {
+const BugSection = ({ view }) => {
   const { data } = useFetch(`${url}/products/`);
   return (
     <section className="bug-section">
       <BugHeader />
       {data ? (
         <div className="bug-groups">
-          {data.map((product) => (
-            <ProductBlock product={product} />
-          ))}
+          {data
+            .filter((product) => product.id == view || !view)
+            .map((product) => (
+              <ProductBlock
+                key={`ticketBlock${product.id}`}
+                product={product}
+              />
+            ))}
         </div>
       ) : (
         <div>Loading..</div>

@@ -5,17 +5,21 @@ import TicketItem from "./ticket_item.js";
 const TicketList = ({ id }) => {
   const { data } = useFetch(`${url}/tickets/by-product/${id}`);
   return (
-    <div className="ticket-list-wrapper">
+    <table className="ticket-list-wrapper">
       {data ? (
-        <table className="ticket-list">
+        <tbody className="ticket-list">
           {data.map((ticket) => (
-            <TicketItem ticket={ticket} />
+            <TicketItem key={`ticketList${ticket.id}`} ticket={ticket} />
           ))}
-        </table>
+        </tbody>
       ) : (
-        <div>Loading...</div>
+        <tfoot>
+          <tr>
+            <td>Loading...</td>
+          </tr>
+        </tfoot>
       )}
-    </div>
+    </table>
   );
 };
 

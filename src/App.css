@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
 }
-h1, h2, h3 {
+ul, h1, h2, h3 {
   padding: 0;
   margin: 0;
 }
@@ -71,13 +71,18 @@ h1, h2, h3 {
 .bug-by-product {
   margin-top: 20px;
 }
+.ticket-list-wrapper {
+  display: flex;
+}
 
 .ticket-list {
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   margin: 0 25px;
   padding: 0 10px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  width: 100%;
 }
 
 .ticket {
@@ -124,11 +129,6 @@ h1, h2, h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.ticket-list {
-  display: flex;
-  flex-direction: column;
 }
 
 .open_count {

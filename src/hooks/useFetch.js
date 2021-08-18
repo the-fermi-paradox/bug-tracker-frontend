@@ -7,7 +7,6 @@ const useFetch = (url) => {
     fetch(url)
       .then((payload) => payload.json())
       .then((json) => {
-        console.log(json);
         setState({ data: json });
       })
       .catch((err) => console.error(err));
