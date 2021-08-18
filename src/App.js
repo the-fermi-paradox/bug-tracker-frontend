@@ -7,7 +7,10 @@ import Main from "./components/main/main.js";
 const App = () => {
   const [view, setView] = useState(0);
   const SwitchViewByProduct = (event) => {
-    const productId = event.target.closest(".product").dataset.product;
+    const productId = parseInt(
+      event.target.closest(".product").dataset.product,
+      10
+    );
     console.log(productId);
     setView(productId);
     console.log("clicked");
