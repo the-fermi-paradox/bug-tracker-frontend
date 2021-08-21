@@ -68,6 +68,10 @@ ul, h1, h2, h3 {
   flex: 1 0 0;
 }
 
+.bug-header__bug {
+  flex: 2 0 0;
+}
+
 .bug-by-product {
   margin-top: 20px;
 }
@@ -98,6 +102,10 @@ ul, h1, h2, h3 {
   overflow: hidden;
   flex: 1 0 0;
   padding: 15px 0;
+}
+
+.ticket__text--title {
+  flex: 2 0 0;
 }
 
 .ticket__text--state {
