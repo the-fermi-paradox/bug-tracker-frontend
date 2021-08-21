@@ -1,8 +1,8 @@
 import TicketStatus from "./ticket_status.js";
-const TicketItem = ({ ticket }) => {
-  const { title, state, date_created, due_date, reporter_id } = ticket;
+const TicketItem = ({ callback, ticket }) => {
+  const { id, title, state, date_created, due_date, reporter_id } = ticket;
   return (
-    <tr className="ticket">
+    <tr className="ticket" onClick={callback} data-ticket={id}>
       <td className="ticket__text ticket__text--title">{title}</td>
       <TicketStatus status={state} />
       <td className="ticket__text ticket__text--date_created">
