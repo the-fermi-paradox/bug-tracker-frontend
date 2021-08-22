@@ -25,27 +25,20 @@ const App = () => {
     );
     setView("ticketDetails");
     setCurrentTicket(ticketId);
-    console.log(currentTicket);
   };
 
   return (
     <div className="App">
       <NavPanel />
+      <ProductPanel callback={SwitchViewByProduct} />
       {view === "productList" && (
-        <>
-          <ProductPanel callback={SwitchViewByProduct} />
-          <Main
-            view={view}
-            ticket={currentProduct}
-            callback={SwitchViewByTicket}
-          />
-        </>
+        <Main
+          view={view}
+          currentProduct={currentProduct}
+          callback={SwitchViewByTicket}
+        />
       )}
-      {view === "ticketDetails" && (
-        <>
-          <MainTicket id={currentTicket} />
-        </>
-      )}
+      {view === "ticketDetails" && <MainTicket id={currentTicket} />}
     </div>
   );
 };

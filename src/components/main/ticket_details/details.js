@@ -13,7 +13,7 @@ const Details = ({ data }) => {
         {severity}
       </span>
       <span className="details-panel__text details-panel__due_date">
-        {due_date}
+        {new Date(due_date).toLocaleDateString("en-US")}
       </span>
     </div>
   );

@@ -10,11 +10,13 @@ const MainTicket = ({ id }) => {
   return (
     <section className="main-ticket">
       {data ? (
-        <div className="main-ticket__wrapper">
-          <HeaderBar data={data[0]} />
+        <>
+          <div className="main-ticket__wrapper">
+            <HeaderBar data={data[0]} />
+            <Description data={data[0]} />
+          </div>
           <Details data={data[0]} />
-          <Description data={data[0]} />
-        </div>
+        </>
       ) : (
         <div>Loading..</div>
       )}

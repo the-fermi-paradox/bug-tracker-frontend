@@ -22,6 +22,34 @@ ul, h1, h2, h3 {
   display: flex;
 }
 
+.main-ticket {
+  flex-grow: 1;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.main-ticket__wrapper {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid var(--text1);
+  flex-grow: 1;
+}
+
+.ticket-header {
+  display: flex;
+  padding: 15px;
+  border-radius: 10px 10px 0 0;
+ border-bottom: 1px solid var(--text1);
+}
+
+.details-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .main {
   display: flex;
   flex-direction: column;
