@@ -40,18 +40,22 @@ ul, h1, h2, h3 {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
 .ticket-header {
   display: flex;
-  padding: 15px 0;
+  padding: 5px 0;
   margin: 0 20px;
   border-radius: 10px 10px 0 0;
-  border-bottom: 1px solid var(--text1);
+}
+
+.ticket-header__text {
+  font-weight: 600;
 }
 
 .description-box {
-  padding: 20px;
+  padding: 0 100px 0 20px;
 }
 
 .details-panel {
@@ -64,6 +68,12 @@ ul, h1, h2, h3 {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  border-bottom: 1px solid #e7e4e7;
+  margin-right: 5px;
+}
+
+.details-panel__block:last-child {
+  border: none;
 }
 
 .details_panel__label {
