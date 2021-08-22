@@ -1,3 +1,4 @@
+import Header from "../header.js";
 import HeaderBar from "./header_bar.js";
 import Details from "./details.js";
 import Description from "./description.js";
@@ -6,16 +7,18 @@ import url from "../../../config.js";
 
 const MainTicket = ({ id }) => {
   const { data } = useFetch(`${url}/tickets/${id}`);
-  console.log(data);
   return (
     <section className="main-ticket">
       {data ? (
         <>
+          <Header headline={data[0].title} />
           <div className="main-ticket__wrapper">
-            <HeaderBar data={data[0]} />
-            <Description data={data[0]} />
+            <div className="main-ticket__vertical-wrapper">
+              <HeaderBar data={data[0]} />
+              <Description data={data[0]} />
+            </div>
+            <Details data={data[0]} />
           </div>
-          <Details data={data[0]} />
         </>
       ) : (
         <div>Loading..</div>

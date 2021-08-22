@@ -5,7 +5,7 @@ import BugSection from "./bug_section.js";
 const Main = ({ currentProduct, callback }) => {
   return (
     <div className="main">
-      <Header />
+      <Header headline="Products" />
       <StatsPanel />
       <BugSection currentProduct={currentProduct} callback={callback} />
     </div>
