@@ -3,7 +3,7 @@ import url from "../../config.js";
 import TicketItem from "./ticket_item.js";
 
 const TicketList = ({ id, callback }) => {
-  const { data } = useFetch(`${url}/tickets/by-product/${id}`);
+  const [data, setData] = useFetch(`${url}/tickets/by-product/${id}`);
   return (
     <table className="ticket-list-wrapper">
       {data ? (

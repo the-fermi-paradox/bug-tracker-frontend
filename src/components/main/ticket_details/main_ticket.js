@@ -3,11 +3,13 @@ import Comment from "./comment.js";
 import Details from "./details.js";
 import Form from "../../form/form.js";
 import useFetch from "../../../hooks/useFetch.js";
+import { useState } from "react";
 import url from "../../../config.js";
 
 const MainTicket = ({ id }) => {
-  const { data } = useFetch(`${url}/tickets/${id}`);
-  const comments = useFetch(`${url}/comments/${id}`).data;
+  const [data, setData] = useFetch(`${url}/tickets/${id}`);
+  const [comments, setComments] = useFetch(`${url}/comments/${id}`);
+
   return (
     <section className="main-ticket">
       {data && comments ? (
@@ -21,7 +23,11 @@ const MainTicket = ({ id }) => {
               {comments.map((comment) => (
                 <Comment data={comment} key={`comment${comment.id}`} />
               ))}
-              <Form data={data[0]} />
+              <Form
+                data={data[0]}
+                setComments={setComments}
+                comments={comments}
+              />
             </div>
             <Details data={data[0]} />
           </div>

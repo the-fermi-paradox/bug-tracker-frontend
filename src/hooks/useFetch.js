@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
-  const [state, setState] = useState({ data: null });
+  const [state, setState] = useState(null);
   useEffect(() => {
-    setState((state) => ({ data: state.data }));
+    setState((state) => state);
     fetch(url)
       .then((payload) => payload.json())
       .then((json) => {
-        setState({ data: json });
+        setState(json);
       })
       .catch((err) => console.error(err));
   }, [url, setState]);
 
-  return state;
+  return [state, setState];
 };
 
 export default useFetch;

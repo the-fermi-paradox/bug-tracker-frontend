@@ -4,7 +4,7 @@ import useFetch from "../../hooks/useFetch.js";
 import url from "../../config.js";
 
 const BugSection = ({ currentProduct, callback }) => {
-  const { data } = useFetch(`${url}/products/`);
+  const [data, setData] = useFetch(`${url}/products/`);
   return (
     <section className="bug-section">
       <BugHeader />

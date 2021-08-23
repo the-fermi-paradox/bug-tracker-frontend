@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch.js";
 import url from "../../config.js";
 
 const StatsPanel = () => {
-  const { data } = useFetch(`${url}/tickets/sum`);
+  const [data, setData] = useFetch(`${url}/tickets/sum`);
   return (
     <div className="stats-panel">
       {data ? (

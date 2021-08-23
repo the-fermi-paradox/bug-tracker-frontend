@@ -5,8 +5,8 @@ import Header from "./header.js";
 import ProductList from "./product_list.js";
 
 const ProductPanel = ({ callback }) => {
-  const { data } = useFetch(`${url}/products`);
-  const data2 = useFetch(`${url}/tickets/sum`).data;
+  const [data, setData] = useFetch(`${url}/products`);
+  const [data2, setData2] = useFetch(`${url}/tickets/sum`);
   const sum = data2
     ? {
         ...data2[0],
