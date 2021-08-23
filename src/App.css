@@ -46,7 +46,6 @@ ul, h1, h2, h3 {
 .ticket-header {
   display: flex;
   padding: 5px 0;
-  margin: 0 20px;
   border-radius: 10px 10px 0 0;
 }
 
@@ -55,13 +54,13 @@ ul, h1, h2, h3 {
 }
 
 .description-box {
-  padding: 0 100px 0 20px;
+  padding: 0 100px 0 0;
 }
 
 .details-panel {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  flex: 1 0 150px;
 }
 
 .details-panel__block {
@@ -354,4 +353,38 @@ ul, h1, h2, h3 {
 .nav-list__item:hover {
   color: var(--text2);
   background-color: var(--emphasis1);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.form-input {
+  min-height: 80px;
+  padding: 8px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  resize: vertical;
+  border: none;
+}
+
+.form-actions {
+  padding-top: 10px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-submit {
+  padding: 10px;
+  background-color: #b3dec2;
+  border: none;
+  border-radius: 5px;
+}
+
+.comment {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 20px 0;
 }

@@ -2,6 +2,7 @@ import Header from "../header.js";
 import HeaderBar from "./header_bar.js";
 import Details from "./details.js";
 import Description from "./description.js";
+import Form from "../../form/form.js";
 import useFetch from "../../../hooks/useFetch.js";
 import url from "../../../config.js";
 
@@ -14,8 +15,11 @@ const MainTicket = ({ id }) => {
           <Header headline={data[0].title} />
           <div className="main-ticket__wrapper">
             <div className="main-ticket__vertical-wrapper">
-              <HeaderBar data={data[0]} />
-              <Description data={data[0]} />
+              <div className="comment">
+                <HeaderBar data={data[0]} />
+                <Description data={data[0]} />
+              </div>
+              <Form data={data[0]} />
             </div>
             <Details data={data[0]} />
           </div>
