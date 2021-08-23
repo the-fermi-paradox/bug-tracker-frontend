@@ -1,21 +1,38 @@
 * {
   box-sizing: border-box;
 }
+
 ul, h1, h2, h3 {
   padding: 0;
   margin: 0;
 }
 
 :root, body, #root, .App {
-  height: 100%;
   width: 100%;
-  --background1: #3b173f;
-  --background2: #300c33;
-  --background3: #f3ebf5;
-  --search-bg: #e0d5e2;
-  --emphasis1: #bc2551;
-  --text1: #86598b;
-  --text2: #fffffd;
+  --nord0: #2e3440;
+  --nord1: #3b4252;
+  --nord2: #434c5e;
+  --nord3: #4c566a;
+  --nord4: #d8dee9;
+  --nord5: #e5e9f0;
+  --nord6: #eceff4;
+  --nord7: #8fbcbb;
+  --nord8: #88c0d0;
+  --nord9: #81a1c1;
+  --nord10: #5e81ac;
+  --nord11: #bf616a;
+  --nord12: #d08770;
+  --nord13: #ebcb8b;
+  --nord14: #a3be8c;
+  --nord15: #b48ead;
+}
+
+:root {
+  color: var(--nord4);
+}
+
+body {
+  background-color: var(--nord0);
 }
 
 .App {
@@ -67,7 +84,7 @@ ul, h1, h2, h3 {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid #e7e4e7;
+  border-bottom: 1px solid var(--nord3);
   margin-right: 5px;
 }
 
@@ -89,12 +106,19 @@ ul, h1, h2, h3 {
   display: flex;
   justify-content: space-between;
   padding: 10px 5px 15px 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--nord3);
+  background-color: var(--nord1);
+}
+
+.main-header__submit-bug {
+  background-color: inherit;
+  color: var(--nord6);
+  border: none;
 }
 
 .stats-panel {
   padding: 20px;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--nord3);
 }
 
 .stats-blocks {
@@ -146,9 +170,11 @@ ul, h1, h2, h3 {
   width: 100%;
 }
 
-.ticket {
+.comment, .ticket {
   display: flex;
-  border-bottom: 1px solid #e7e4e7;
+  border-bottom: 1px solid var(--nord3);
+  background-color: var(--nord1);
+  padding: 5px;
 }
 
 .ticket:last-child {
@@ -170,14 +196,6 @@ ul, h1, h2, h3 {
   border-radius: 5px;
 }
 
-.ticket__text--open {
-  background-color: #b3dec2;
-}
-
-.ticket__text--closed {
-  background-color: red;
-}
-
 .bug-product-title {
   padding: 5px 0 0 25px;
   display: flex;
@@ -188,6 +206,11 @@ ul, h1, h2, h3 {
   margin-right: 10px;
 }
 
+
+.fa-plus-circle {
+  color: var(--nord3);
+}
+
 .product-add-button {
   background-color: inherit;
   border: none;
@@ -196,44 +219,54 @@ ul, h1, h2, h3 {
   justify-content: center;
 }
 
-.open_count {
-  background-color: #b3dec2;
+.open_count, .ticket__text--open {
+  background-color: var(--nord7);
+  color: var(--nord1);
 }
 
-.closed_count {
-  background-color: #dcf8ef;
+.square--open {
+  color: var(--nord9);
+}
+
+.closed_count, .ticket__text--closed {
+  background-color: var(--nord10);
+}
+
+.square--closed {
+  color: var(--nord10);
 }
 
 .product-panel {
-  background-color: var(--background3);
+  background-color: var(--nord0);
+  border-left: 1px solid var(--nord1);
+  border-right: 1px solid var(--nord1);
   display: flex;
   flex-direction: column;
 }
 
-.product-wrapper {
-  padding: 15px 0 5px 5px;
-}
-
 .product-list-wrapper {
-  padding: 5px 0 0 5px;
+  padding: 10px 0 0 10px;
 }
 
 .search-bar-wrapper {
   position: relative;
-  padding-right: 5px;
+  padding: 9px;
+  border-bottom: 1px solid var(--nord3);
+  background-color: var(--nord1);
 }
 
 .search-bar {
   border-radius: 10px;
   border: none;
-  padding: 10px 29px;
-  background-color: var(--search-bg);
+  padding: 10px 30px;
+  background-color: var(--nord2);
+  color: var(--nord6);
 }
 
 .search-bar__icon {
   position: absolute;
-  left: 10px;
-  bottom: 12px;
+  left: 20px;
+  bottom: 20px;
   opacity: 0.6;
 }
 
@@ -257,7 +290,7 @@ ul, h1, h2, h3 {
 }
 
 .product:hover {
-  background-color: var(--text2);
+  background-color: var(--nord3);
 }
 
 .product__open {
@@ -274,16 +307,12 @@ ul, h1, h2, h3 {
 
 .square--open {
   margin-right: 5px;
-  color: green;
-}
-
-.square--closed {
-  color: red;
 }
 
 .nav__header {
-  background-color: var(--background2);
-  padding: 5px 5px 16px 5px;
+  background-color: var(--nord1);
+  padding: 5px 5px 15px 5px;
+  border-bottom: 1px solid var(--nord3);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -317,8 +346,8 @@ ul, h1, h2, h3 {
 }
 
 .nav-panel {
-  color: var(--text1);
-  background-color: var(--background1);
+  color: var(--nord6);
+  background-color: var(--nord0);
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -383,8 +412,11 @@ ul, h1, h2, h3 {
 }
 
 .comment {
+  flex-direction: column;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
   margin-left: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   margin-right: 20px;
-  padding: 20px 0;
+  padding: 20px 10px;
 }
