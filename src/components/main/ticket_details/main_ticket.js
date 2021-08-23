@@ -1,24 +1,26 @@
 import Header from "../header.js";
-import HeaderBar from "./header_bar.js";
+import Comment from "./comment.js";
 import Details from "./details.js";
-import Description from "./description.js";
 import Form from "../../form/form.js";
 import useFetch from "../../../hooks/useFetch.js";
 import url from "../../../config.js";
 
 const MainTicket = ({ id }) => {
   const { data } = useFetch(`${url}/tickets/${id}`);
+  const comments = useFetch(`${url}/comments/${id}`).data;
   return (
     <section className="main-ticket">
-      {data ? (
+      {data && comments ? (
         <>
           <Header headline={data[0].title} />
           <div className="main-ticket__wrapper">
             <div className="main-ticket__vertical-wrapper">
-              <div className="comment">
-                <HeaderBar data={data[0]} />
-                <Description data={data[0]} />
-              </div>
+              {/* Our main ticket */}
+              <Comment data={data[0]} />
+              {/* Our comments */}
+              {comments.map((comment) => (
+                <Comment data={comment} key={`comment${comment.id}`} />
+              ))}
               <Form data={data[0]} />
             </div>
             <Details data={data[0]} />

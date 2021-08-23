@@ -9,7 +9,6 @@ const Form = ({ data }) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        title: "none",
         description: text,
         ticket_id: id,
         user_id: 1,
