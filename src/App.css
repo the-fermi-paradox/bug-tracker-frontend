@@ -1,14 +1,59 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+button {
+  background-color: inherit;
+  border: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 * {
   box-sizing: border-box;
 }
 
-ul, h1, h2, h3 {
-  padding: 0;
-  margin: 0;
-}
-
 :root, body, #root, .App {
   width: 100%;
+}
+
+:root {
   --nord0: #2e3440;
   --nord1: #3b4252;
   --nord2: #434c5e;
@@ -25,18 +70,25 @@ ul, h1, h2, h3 {
   --nord13: #ebcb8b;
   --nord14: #a3be8c;
   --nord15: #b48ead;
+  color: var(--nord4);
+  display: flex;
+  min-height: 100vh;
 }
 
-:root {
-  color: var(--nord4);
+#root {
+  display: flex;
+  flex-grow: 1;
 }
 
 body {
   background-color: var(--nord0);
+  display: flex;
+  flex-grow: 1;
 }
 
 .App {
   display: flex;
+  flex-grow: 1;
 }
 
 .main-ticket {
@@ -62,6 +114,7 @@ body {
 
 .ticket-header {
   display: flex;
+  justify-content: space-between;
   padding: 5px 0;
   border-radius: 10px 10px 0 0;
 }
@@ -392,10 +445,13 @@ body {
 
 .form-input {
   min-height: 80px;
-  padding: 8px;
+  padding: 12px;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background-color: var(--nord1);
+  color: var(--nord6);
   resize: vertical;
   border: none;
+  border-radius: 5px;
 }
 
 .form-actions {
@@ -419,4 +475,13 @@ body {
   margin-top: 10px;
   margin-right: 20px;
   padding: 20px 10px;
+  border-radius: 5px;
+}
+
+.comment-controls {
+  color: var(--nord6);
+}
+
+.comment-controls__button, .comment-controls__icon {
+  color: inherit;
 }

@@ -1,10 +1,10 @@
 import HeaderBar from "./header_bar.js";
 import Description from "./description.js";
 
-const Comment = ({ data }) => {
+const Comment = ({ data, id, set, ticketId }) => {
   return (
-    <div className="comment">
-      <HeaderBar data={data} />
+    <div className="comment" id={id}>
+      <HeaderBar data={data} set={set} ticketId={ticketId} />
       <Description data={data} />
     </div>
   );
