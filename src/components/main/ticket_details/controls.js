@@ -1,16 +1,14 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+import refresh from "../../../helpers/refresh.js";
 import url from "../../../config.js";
 
 const Controls = ({ id, ticketId, set }) => {
   const remove = async (event) => {
     const id = event.target.closest(".comment").id.split("-")[1];
-    const res = await fetch(`${url}/comments/${id}`, { method: "DELETE" });
-    console.log(res);
-    const payload = await fetch(`${url}/comments/${ticketId}`);
-    const json = await payload.json();
-    set(json);
+    await fetch(`${url}/comments/${id}`, { method: "DELETE" });
+    refresh(`${url}/comments/${ticketId}`, set);
   };
   return (
     <div className="comment-controls">

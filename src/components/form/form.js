@@ -1,5 +1,6 @@
 import url from "../../config.js";
 import { useState } from "react";
+import refresh from "../../helpers/refresh.js";
 const Form = ({ id, set }) => {
   const [text, setText] = useState(null);
 
@@ -22,10 +23,7 @@ const Form = ({ id, set }) => {
       body: JSON.stringify(newComment),
     });
 
-    const payload = await fetch(`${url}/comments/${id}`);
-    const json = await payload.json();
-
-    set(json);
+    refresh(`${url}/comments/${id}`, set);
   };
 
   return (

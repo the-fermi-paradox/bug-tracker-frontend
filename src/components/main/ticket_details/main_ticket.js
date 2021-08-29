@@ -17,7 +17,7 @@ const MainTicket = ({ id }) => {
           <div className="main-ticket__wrapper">
             <div className="main-ticket__vertical-wrapper">
               {/* Our main ticket */}
-              <Comment data={data[0]} />
+              <Comment data={data[0]} ticket={true} ticketId={id} />
               {/* Our comments */}
               {comments.map((comment) => (
                 <Comment
